@@ -6,16 +6,29 @@
     <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
-    <h3>Authorization</h3>
+    <div class="header-row">
+        <h3>Authorization</h3>
+        <button id="themeToggle" title="Toggle dark mode" class="theme-toggle">
+            🌓
+        </button>
+    </div>
 
-    <label style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 8px;">
+    <label class="skip-row">
         <input type="checkbox" id="skipCommon" />
         <span>Omit Bearer/Basic during copy</span>
     </label>
 
     <button id="copy">Copy</button>
-    <div id="preview" style="margin-top: 10px; font-family: monospace; word-break: break-word;"></div>
-    <p id="status" style="margin-top: 8px; font-weight: bold;"></p>
+
+    <div id="preview" class="preview"></div>
+
+    <p id="status" class="status"></p>
+
+    <div id="jwtLink" class="jwt-link-container"></div>
+
+    <div id="jwtDecoded" class="jwt-decoded"></div>
+
+    <div id="jwtWarning" class="jwt-warning"></div>
 
     <script src="popup.js"></script>
 </body>
