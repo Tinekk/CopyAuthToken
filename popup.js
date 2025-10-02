@@ -95,23 +95,30 @@ function updatePreview() {
             link.textContent = "🔗 Open in jwt.io";
             link.href = "#"; // prevent default
             link.addEventListener("click", (e) => {
-                e.preventDefault();
+            e.preventDefault();
 
-                const warningContainer = document.getElementById("jwtWarning");
-                warningContainer.innerHTML =
-                    "⚠ Opening a JWT in jwt.io can expose it to third parties. " +
-                    '<button id="jwtOpenBtn" class="decode-btn" style="margin-left:6px;">Open Anyway</button>';
-                warningContainer.style.display = "block";
+            const warningContainer = document.getElementById("jwtWarning");
+            warningContainer.innerHTML =
+                "⚠ Opening a JWT in jwt.io can expose it to third parties. " +
+                '<button id="jwtOpenBtn" class="decode-btn" style="margin-left:6px;">Open Anyway</button>' +
+                '<button class="dismiss-btn">×</button>';
+            warningContainer.style.display = "block";
 
-                // handle the actual open button
-                const btn = document.getElementById("jwtOpenBtn");
-                btn.addEventListener("click", () => {
-                    window.open(
-                    "https://jwt.io/#token=" + encodeURIComponent(token),
-                    "_blank"
-                    );
-                    warningContainer.style.display = "none"; // hide after opening
-                });
+            // handle the "Open Anyway" button
+            const openBtn = document.getElementById("jwtOpenBtn");
+            openBtn.addEventListener("click", () => {
+                window.open(
+                "https://jwt.io/#token=" + encodeURIComponent(token),
+                "_blank"
+                );
+                warningContainer.style.display = "none"; // hide after opening
+            });
+
+            // handle dismiss button
+            const dismissBtn = warningContainer.querySelector(".dismiss-btn");
+            dismissBtn.addEventListener("click", () => {
+                warningContainer.style.display = "none";
+            });
             });
             link.className = "jwt-link";
             jwtLink.appendChild(link);
