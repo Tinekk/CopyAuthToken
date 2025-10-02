@@ -1,0 +1,4 @@
+body { font-family: system-ui, sans-serif; width: 320px; padding: 12px; }
+h3 { margin: 0 0 8px; }
+button { padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc; cursor: pointer; }
+#preview { font-size: 12px; opacity: 0.9: }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Copy Auth Token</title>
+    <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+    <h3>Authorization</h3>
+
+    <label style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 8px;">
+        <input type="checkbox" id="skipCommon" />
+        <span>Omit Bearer/Basic during copy</span>
+    </label>
+
+    <button id="copy">Copy</button>
+    <div id="preview" style="margin-top: 10px; font-family: monospace; word-break: break-word;"></div>
+    <p id="status" style="margin-top: 8px; font-weight: bold;"></p>
+
+    <script src="popup.js"></script>
+</body>
+</html>
