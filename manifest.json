@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Copy Authorization Header",
+  "name": "Bearer Buddy – Copy & Decode JWT / Auth Headers",
   "version": "1.0",
-  "description": "Copies the Authorization header from recent requests to clipboard.",
+  "description": "Copy to clipboard or decode JWT / Bearer tokens instantly. Supports JWT.io, local decoding, and more.",
   "icons": {
     "128": "icon.png"
   },
@@ -20,6 +20,6 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Copy Authorization"
+    "default_title": "Bearer Buddy"
   }
 }
